@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, ModalController   } from 'ionic-angular';
+
+import { SIGNOS } from "../../data/data.signos";
+import { Signo } from "../../interfaces/signo.interfaces";
+
+
+import { SignoPage } from "../signo/signo";
+
+
 
 @Component({
   selector: 'page-home',
@@ -7,8 +15,31 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  signos:Signo[] = [];
+  signo:Signo;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController ) {
+    this.signos = SIGNOS.slice(0);
   }
+
+  ver(signoParam:Signo){
+    this.navCtrl.push(SignoPage,{signo:signoParam});
+  }
+
+  // presentModal(signoParam:Signo) {
+  //   const modal = this.modalCtrl.create(SaludPage,{signo:signoParam});
+  //   modal.present();
+  // }
+
+  // numeroAleatorio(min:number, max:number){
+  //   return Math.round(Math.random() * (max - min) + min);
+  // }
+
+
+
+
+
+
+
 
 }

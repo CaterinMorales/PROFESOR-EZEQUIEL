@@ -1,1 +1,72 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!-- <ion-menu>
+  <ion-header>
+
+  </ion-header>
+  <ion-content>
+    <ion-router>
+      <ion-route component="page-tabs">
+        <ion-route url="/schedule" component="tab-schedule">
+          <ion-route component="page-schedule"></ion-route>
+          <ion-route url="/session/:sessionId" component="page-session"></ion-route>
+        </ion-route>
+
+        <ion-route url="/speakers" component="tab-speaker">
+          <ion-route component="page-speaker-list"></ion-route>
+          <ion-route url="/session/:sessionId" component="page-session"></ion-route>
+          <ion-route url="/:speakerId" component="page-speaker-detail"></ion-route>
+        </ion-route>
+
+        <ion-route url="/map" component="page-map"></ion-route>
+        <ion-route url="/about" component="page-about"></ion-route>
+      </ion-route>
+
+      <ion-route url="/tutorial" component="page-tutorial"></ion-route>
+      <ion-route url="/login" component="page-login"></ion-route>
+      <ion-route url="/account" component="page-account"></ion-route>
+      <ion-route url="/signup" component="page-signup"></ion-route>
+      <ion-route url="/support" component="page-support"></ion-route>
+    </ion-router>
+  </ion-content>
+</ion-menu> -->
+
+
+
+<ion-menu  [content]="content"  color="dark">
+  <ion-header color="dark">
+    <ion-toolbar>
+      <ion-title text-center>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >
+    <ion-list>
+      <button ion-item (click)="seeZodiaco()" text-center>
+        Tu signo
+      </button>
+      <button ion-item (click)="seeHome()" text-center>
+        Carta del día
+      </button>
+      <button ion-item (click)="seeVideos()" text-center>
+        Ultimos videos
+      </button>
+      <button ion-item (click)="seeRedesSociales()" text-center>
+        Redes sociales
+      </button>
+
+
+    </ion-list>
+
+    <a ion-button
+            item-end
+            icon-end
+            style="width:100%; margin-top:20px; position:absolute; bottom:0px"
+            color="dark"
+            class="btn-reproducir"
+            href="https://wa.me/5491131123299">
+      Agenda tu consulta
+      <ion-icon name="whatsapp"></ion-icon>
+    </a>
+
+
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content ></ion-nav>
