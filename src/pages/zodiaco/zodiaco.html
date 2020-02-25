@@ -1,0 +1,30 @@
+<ion-header color="dark">
+  <ion-navbar>
+    <ion-buttons >
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="fondo-content">
+
+  <ion-list >
+
+    <ion-item-sliding class="fondo-negro" *ngFor="let signo of signos">
+        <!-- Generación de items -->
+        <ion-item (click)="ver(signo)">
+          <ion-avatar item-start>
+            <img [src]="signo.imagen" alt="">
+          </ion-avatar>
+          <h2>{{ signo.nombre }}</h2>
+          <p>{{ signo.fecha }}</p>
+        </ion-item>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>
