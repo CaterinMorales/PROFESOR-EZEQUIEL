@@ -26,14 +26,7 @@ export class HomePage {
     this.navCtrl.push(SignoPage,{signo:signoParam});
   }
 
-  // presentModal(signoParam:Signo) {
-  //   const modal = this.modalCtrl.create(SaludPage,{signo:signoParam});
-  //   modal.present();
-  // }
 
-  // numeroAleatorio(min:number, max:number){
-  //   return Math.round(Math.random() * (max - min) + min);
-  // }
 
 
 
